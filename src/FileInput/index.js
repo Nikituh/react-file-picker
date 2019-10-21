@@ -22,6 +22,7 @@ class FileInput extends React.Component {
       <div style={this.props.style}>
         <input
           type="file"
+          accept={this.props.accept}
           style={{ display: 'none' }}
           onChange={this._handleUpload}
           ref={ele => (this.fileInput = ele)}
@@ -36,6 +37,7 @@ class FileInput extends React.Component {
 
 FileInput.propTypes = {
   style: PropTypes.object,
+  accept: PropTypes.string,
   children: PropTypes.node.isRequired,
   onChange: PropTypes.func.isRequired
 }

@@ -49,10 +49,10 @@ class FilePicker extends React.Component {
   }
 
   render() {
-    const { children, style } = this.props
+    const { children, style, accept } = this.props
 
     return (
-      <FileInput onChange={this._validate} style={style}>
+      <FileInput onChange={this._validate} style={style} accept={accept}>
         {children}
       </FileInput>
     )
@@ -69,6 +69,7 @@ FilePicker.propTypes = {
   extensions: PropTypes.array,
   // validate file contents
   validateContent: PropTypes.func,
+  accept: PropTypes.string,
   style: PropTypes.object
 }
 
